@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel-Guerrero</title>
+    <link rel="stylesheet" href="hoja-de-vida.css">
 </head>
 <body>
-    Miguel-Guerrero
+    
+    <div class="principal"></div>
+
+    <section class="main">
+        <h1>Principal Animacion</h1>
+    </section>
+    
+    <script type="text/javascript">
+        const principal = document.querySelector(".principal");
+
+        //follow principal on mouse move
+        document.addEventListener("mousemove", (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+
+            principal.style.top = y + "px";
+            principal.style.left = x + "px";
+            principal.style.display = "block";
+
+            //principal effects on mosue stopped
+            function mouseStopped() {
+                principal.style.display = "none";
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 1000);
+           
+        });
+        
+        //principal effects on mouseout
+        document.addEventListener("mouseout", () => {
+            principal.style.display = "none";
+        })
+        
+    </script>
     
 </body>
 </html>
